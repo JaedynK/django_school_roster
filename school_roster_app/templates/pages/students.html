@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>School Page</title>
+  </head>
+  <body>
+    <h2>All Studnets</h2>
+    <ul>   
+    {% for i, student in data %}
+        <li>{{i}}: <a href="{{ student }}/">{{student}}</a></li>
+    {% endfor %}
+    </ul>
+  </body>
+</html>
