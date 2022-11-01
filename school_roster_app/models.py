@@ -26,7 +26,6 @@ class Staff(Person):
         data = json.load(f)
 
         for i in data:
-            print(i)
             staff.append(i)
         return staff
 
@@ -45,7 +44,6 @@ class Student(Person):
         data = json.load(f)
 
         for i in data:
-            print(i)
             student.append(i)
         return student
 
@@ -72,18 +70,21 @@ class School:
             student_name.append(student)
         return student_name
 
-    def find_student_by_id(self, school_id):
-        for student in self.students:
-            if student['school_id'] == school_id:
-                return student
         
-        return None
+    def find_student_by_id(self, student_id):
+        data = self.students
+        for student in data:
+            if student['school_id'] == student_id:
+                return student
 
     def find_staff_by_id(self, employee_id):
-        pass
+        data = self.staff
+        for student in data:
+            if student['employee_id'] == employee_id:
+                return student
 
 
-school = School('test')
+# school = School('test')
 
-print(f' answer = {school.find_staff_by_id(86545)}')
+# print(f' answer = {school.find_student_by_id}')
 # print(school.students)
